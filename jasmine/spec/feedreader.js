@@ -79,7 +79,7 @@ $(function() {
     });
 
     it('should be created', function () {
-      var entryNumber = $feedContainer.children().length;
+      var entryNumber = $feedContainer.children('.entry').length;
       expect(entryNumber).not.toBe(0);
     });
 
@@ -93,12 +93,12 @@ $(function() {
       loadFeed(0, setFirstEntry);
 
       function setFirstEntry() {
-        firstEntry = $feedContainer.children().first();
+        firstEntry = $feedContainer.children('.entry').first();
         loadFeed(1, setNewFirstEntry);
       }
 
       function setNewFirstEntry() {
-        newFirstEntry = $feedContainer.children().first();
+        newFirstEntry = $feedContainer.children('.entry').first();
         done();
       }
     });
