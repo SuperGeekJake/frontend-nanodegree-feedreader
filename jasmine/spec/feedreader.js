@@ -13,7 +13,6 @@
 $(function() {
   var $body = $('body');
   var $menuIcon = $('.menu-icon-link');
-  var $feedContainer = $('.feed');
 
   /* This is our first test suite - a test suite just contains
   * a related set of tests. This suite is all about the RSS
@@ -79,7 +78,7 @@ $(function() {
     });
 
     it('should be created', function () {
-      var entryNumber = $feedContainer.children('.entry').length;
+      var entryNumber = $('.feed .entry').size();
       expect(entryNumber).not.toBe(0);
     });
 
@@ -93,12 +92,12 @@ $(function() {
       loadFeed(0, setFirstEntry);
 
       function setFirstEntry() {
-        firstEntry = $feedContainer.children('.entry').first();
+        firstEntry = $('.feed .entry').first();
         loadFeed(1, setNewFirstEntry);
       }
 
       function setNewFirstEntry() {
-        newFirstEntry = $feedContainer.children('.entry').first();
+        newFirstEntry = $('.feed .entry').first();
         done();
       }
     });
